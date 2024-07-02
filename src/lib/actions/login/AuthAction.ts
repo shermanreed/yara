@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { redirect } from "next/navigation";
 
 export const authByUserPass = createAsyncThunk(
   "auth/login",

@@ -2,6 +2,7 @@
 import { getWorkSpace } from "@/lib/actions/ws/WsAction";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { ws } from "@/lib/slices/wsSlice";
+import { cookies } from "next/headers";
 import React, { useEffect } from "react";
 
 export default function ListWorkSpace() {
@@ -13,6 +14,14 @@ export default function ListWorkSpace() {
 
   return (
     <div className="w-1/2 h-1/2 flex items-center justify-center bg-gray-500 rounded-lg">
+      <button
+        className="p-2 bg-red-500 rounded-lg"
+        onClick={() => {
+          fetch("http://localhost:3000/login/api/logout", { method: "DELETE" });
+        }}
+      >
+        logout
+      </button>
       {status === "loading" ? (
         <>Loading ...</>
       ) : (
