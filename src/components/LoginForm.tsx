@@ -28,7 +28,7 @@ export default function LoginForm(): JSX.Element {
     );
   };
   useEffect(() => {
-    status === "success" && push("/");
+    status === "success" && push("/home");
   }, [push, status]);
 
   return (
